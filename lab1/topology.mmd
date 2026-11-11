@@ -1,0 +1,7 @@
+flowchart TB
+    S["sonic1 · SONiC VS"]
+    H1["h1 · 10.99.1.1/24"]
+    H2["h2 · 10.99.1.2/24"]
+    S ---|"eth1 / Ethernet0 ↔ h1 eth1"| H1
+    S ---|"eth2 / Ethernet4 ↔ h2 eth1"| H2
+    H1 ---|"eth2 ↔ eth2 · 10.99.1.0/24"| H2

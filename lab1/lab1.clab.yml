@@ -1,0 +1,29 @@
+name: ${STUDENT}-l1
+
+mgmt:
+  network: clab-${STUDENT}-l1
+  ipv4-subnet: 10.101.${N}.0/24
+
+topology:
+  kinds:
+    sonic-vs:
+      image: sonic-course:202511
+    linux:
+      image: lab-tools:1.0
+
+  nodes:
+    sonic1:
+      kind: sonic-vs
+    h1:
+      kind: linux
+      exec:
+        - ip addr add 10.${N}.1.1/24 dev eth2
+    h2:
+      kind: linux
+      exec:
+        - ip addr add 10.${N}.1.2/24 dev eth2
+
+  links:
+    - endpoints: ["h1:eth1", "sonic1:eth1"]
+    - endpoints: ["h2:eth1", "sonic1:eth2"]
+    - endpoints: ["h1:eth2", "h2:eth2"]
