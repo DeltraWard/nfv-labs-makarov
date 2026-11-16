@@ -1,0 +1,34 @@
+arp_update                       STOPPED   Not started
+bgpd                             STOPPED   Not started
+buffermgrd                       RUNNING   pid 484, uptime 0:01:46
+coppmgrd                         RUNNING   pid 285, uptime 0:02:02
+fabricmgrd                       RUNNING   pid 512, uptime 0:01:38
+fdbsyncd                         RUNNING   pid 291, uptime 0:02:00
+fpmsyncd                         RUNNING   pid 297, uptime 0:01:57
+gbsyncd                          STOPPED   Not started
+gearsyncd                        STOPPED   Not started
+intfmgrd                         RUNNING   pid 447, uptime 0:01:53
+mgmtd                            RUNNING   pid 479, uptime 0:01:49
+natmgrd                          RUNNING   pid 501, uptime 0:01:41
+natsyncd                         RUNNING   pid 504, uptime 0:01:40
+nbrmgrd                          RUNNING   pid 488, uptime 0:01:45
+neighsyncd                       RUNNING   pid 288, uptime 0:02:01
+orchagent                        RUNNING   pid 139, uptime 0:02:03
+pathd                            STOPPED   Not started
+portmgrd                         RUNNING   pid 316, uptime 0:01:54
+portsyncd                        RUNNING   pid 136, uptime 0:02:04
+redis-chassis                    STOPPED   Not started
+redis-server                     RUNNING   pid 79, uptime 0:02:06
+restore_neighbors                STOPPED   Not started
+rsyslogd                         RUNNING   pid 74, uptime 0:02:08
+sflowmgrd                        RUNNING   pid 498, uptime 0:01:43
+start.sh                         EXITED    Nov 11 07:27 PM
+staticd                          RUNNING   pid 481, uptime 0:01:48
+syncd                            RUNNING   pid 112, uptime 0:02:05
+teammgrd                         RUNNING   pid 300, uptime 0:01:56
+teamsyncd                        RUNNING   pid 294, uptime 0:01:58
+tunnelmgrd                       RUNNING   pid 507, uptime 0:01:39
+vlanmgrd                         RUNNING   pid 453, uptime 0:01:52
+vrfmgrd                          RUNNING   pid 303, uptime 0:01:55
+vxlanmgrd                        RUNNING   pid 491, uptime 0:01:44
+zebra                            RUNNING   pid 473, uptime 0:01:50

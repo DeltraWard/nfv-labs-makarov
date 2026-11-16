@@ -1,0 +1,40 @@
+ЛР2 завершена: 12.11.2026 03:14:21 MSK
+Студент: makarov@nfv-makarov
+ИСУ=412999, STUDENT=makarov, N=99, AS1=65099, AS2=65199
+Interface    Master    IPv4 address/mask    Admin/Oper    BGP Neighbor    Neighbor IP
+-----------  --------  -------------------  ------------  --------------  -------------
+Ethernet0              10.99.1.1/24         up/up         N/A             N/A
+Ethernet4              10.99.0.0/31         up/up         N/A             N/A
+Loopback0              10.99.255.1/32       up/up         N/A             N/A
+eth0                   10.102.99.3/24       up/up         N/A             N/A
+lo                     127.0.0.1/8          up/up         N/A             N/A
+
+IPv4 Unicast Summary:
+BGP router identifier 10.99.255.1, local AS number 65099 VRF default vrf-id 0
+BGP table version 4
+RIB entries 7, using 896 bytes of memory
+Peers 1, using 24 KiB of memory
+
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+10.99.0.1       4      65199         8         8        4    0    0 00:03:14            2        4 N/A
+
+Total number of neighbors 1
+Codes: K - kernel route, C - connected, L - local, S - static,
+       R - RIP, O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,
+       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,
+       f - OpenFabric, t - Table-Direct,
+       > - selected route, * - FIB route, q - queued, r - rejected, b - backup
+       t - trapped, o - offload failure
+
+IPv4 unicast VRF default:
+K>* 0.0.0.0/0 [0/0] via 10.102.99.1, eth0, weight 1, 00:03:29
+C>* 10.99.0.0/31 is directly connected, Ethernet4, weight 1, 00:03:20
+C>* 10.99.1.0/24 is directly connected, Ethernet0, weight 1, 00:03:20
+B>* 10.99.2.0/24 [20/0] via 10.99.0.1, Ethernet4, weight 1, 00:03:13
+C>* 10.99.255.1/32 is directly connected, Loopback0, weight 1, 00:03:20
+B>* 10.99.255.2/32 [20/0] via 10.99.0.1, Ethernet4, weight 1, 00:03:13
+C>* 10.102.99.0/24 is directly connected, eth0, weight 1, 00:03:29
+traceroute to 10.99.2.10 (10.99.2.10), 8 hops max, 46 byte packets
+ 1  10.99.1.1  0.032 ms  0.053 ms  0.022 ms
+ 2  10.99.0.1  0.165 ms  0.066 ms  0.061 ms
+ 3  10.99.2.10  0.448 ms  0.150 ms  0.136 ms
