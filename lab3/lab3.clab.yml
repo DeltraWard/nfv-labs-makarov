@@ -1,0 +1,43 @@
+name: ${STUDENT}-l3
+
+mgmt:
+  network: clab-${STUDENT}-l3
+  ipv4-subnet: 10.103.${N}.0/24
+
+topology:
+  kinds:
+    sonic-vs:
+      image: sonic-course:202511
+    linux:
+      image: lab-tools:1.0
+
+  nodes:
+    leaf1:
+      kind: sonic-vs
+    leaf2:
+      kind: sonic-vs
+    host1:
+      kind: linux
+      exec:
+        - ip link set eth1 mtu 1500
+        - ip addr add 192.168.${N}.11/24 dev eth1
+    host2:
+      kind: linux
+      exec:
+        - ip link set eth1 mtu 1500
+        - ip addr add 192.168.${N}.12/24 dev eth1
+    host3:
+      kind: linux
+      exec:
+        - ip link set eth1 mtu 1500
+    host4:
+      kind: linux
+      exec:
+        - ip link set eth1 mtu 1500
+
+  links:
+    - endpoints: ["host1:eth1", "leaf1:eth1"]
+    - endpoints: ["leaf1:eth2", "leaf2:eth2"]
+    - endpoints: ["host2:eth1", "leaf2:eth1"]
+    - endpoints: ["host3:eth1", "leaf1:eth3"]
+    - endpoints: ["host4:eth1", "leaf2:eth3"]
