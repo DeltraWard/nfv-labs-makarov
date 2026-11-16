@@ -1,0 +1,15 @@
+# Упрощённый дескриптор прозрачного шейпера, выполненный по образцу fw-vnfd.yaml.
+vnfd:
+  id: vnf-shaper
+  provider: "makarov"
+  version: "1.0"
+  description: "Прозрачный шейпер трафика (bridge + tc)"
+  sw_image: lab-tools:1.0
+  vdu:
+    resources: {vcpu: 1, memory_mb: 64}
+  ext_cp:
+    - {id: cp-in, iface: eth1, role: "сторона клиентов"}
+    - {id: cp-out, iface: eth2, role: "сторона сервера"}
+  config: "tc qdisc replace dev eth2 root tbf rate 19mbit burst 128kb latency 400ms"
+  scaling: {min_instances: 1, max_instances: 1}
+  lcm_operations: [instantiate, configure, heal, terminate]
